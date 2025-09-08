@@ -1,5 +1,5 @@
 {
-  "name": "etapa2",
+  "name": "etapa3",
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
@@ -12,6 +12,6 @@
   "keywords": [],
   "description": "",
   "dependencies": {
-    "fastify": "^5.5.0"
+    "fastify": "^5.6.0"
   }
 }

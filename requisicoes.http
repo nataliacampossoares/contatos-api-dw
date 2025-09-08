@@ -3,14 +3,14 @@
 
 
 ### Contatos
-GET {{url}}/contatos
+GET {{url}}/api/contatos
 
 ### 
-GET {{url}}/contatos/3
+GET {{url}}/api/contatos/3
 
 
 ### Requisição POST
-POST {{url}}/contatos
+POST {{url}}/api/contatos
 Content-Type: application/json
 
 {
@@ -20,7 +20,7 @@ Content-Type: application/json
 }
 
 ### Requisição PUT
-PUT {{url}}/contatos/1
+PUT {{url}}/api/contatos/1
 Content-Type: application/json
 
 {    
@@ -30,4 +30,4 @@ Content-Type: application/json
 }
 
 ### Requisição DELETE
-DELETE {{url}}/contatos/1
+DELETE {{url}}/api/contatos/1
