@@ -14,9 +14,9 @@ export async function contatoRoutes(fastify, options) {
   fastify.get('/contatos', (request, reply) => 
     contatoController.getContatos(request, reply)
   );
-  fastify.get('/contatos/:id', (request, reply) => 
-    contatoController.getContatoById(request, reply)
-  );
+  // fastify.get('/contatos/:id', (request, reply) => 
+  //   contatoController.getContatoById(request, reply)
+  // );
   fastify.post('/contatos', (request, reply) => 
     contatoController.createContato(request, reply)
   );
@@ -26,4 +26,7 @@ export async function contatoRoutes(fastify, options) {
   fastify.delete('/contatos/:id', (request, reply) => 
     contatoController.deleteContato(request, reply)
   );
+  fastify.get('/contatos/:email', (request, reply) =>
+    contatoController.getContatoByEmail(request, reply)
+  )
 }

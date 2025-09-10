@@ -10,18 +10,11 @@ export class ContatoController {
         return reply.send(contatos);
       }
     
-      async getContatoById(request, reply) {
-        const { id } = request.params;
-        const contato = this.contatoService.getContatoById(id);
-    
-        if (!contato) {
-          return reply.code(404).send({ message: 'Contato não encontrado' });
-        }
-        return reply.send(contato);
-      }
-    
       async createContato(request, reply) {
-        const novoContato = this.contatoService.createContato(request.body);
+        const novoContato = this.contatoService.validaNome(request.body);
+        if (!novoContato) {
+          return reply.code(404).send({ message: 'O nome precisa ter mais de 3 caracteres!' });
+        }
         return reply.code(201).send(novoContato);
       }
     
@@ -43,5 +36,15 @@ export class ContatoController {
           return reply.code(404).send({ message: 'Contato não encontrado' });
         }
         return reply.code(204).send();
+      }
+
+      async getContatoByEmail(request, reply){
+        const { email } = request.params;
+        const contato = this.contatoService.getContatoByEmail(email);
+        
+        if (!contato) {
+          return reply.code(404).send({ message: 'Email não encontrado' });
+        }
+        return reply.send(contato);
       }
     }

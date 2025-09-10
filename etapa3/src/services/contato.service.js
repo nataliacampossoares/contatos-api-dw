@@ -26,4 +26,17 @@ export class ContatoService {
       deleteContato(id) {
         return this.contatoRepository.remove(id);
       }
+
+      validaNome(contatoData) {
+        console.log(contatoData.nome.length)
+        if (contatoData.nome.length < 3){
+          return null;
+        } else {
+          return this.contatoRepository.create(contatoData);
+        }
+      }
+
+      getContatoByEmail(email){
+        return this.contatoRepository.findByEmail(email)
+      }
     }

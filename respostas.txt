@@ -1,0 +1,49 @@
+Respostas teóricas da prova terceiro bimestre DW3 MODELO C
+
+1 - C
+
+2 - B
+
+3 - Porque, com o acoplamento forte da etapa 2, não é possível realizar testes independentes (mocks) e a manutenção do código 
+fica mais complicada, uma vez que se  torna mais complexo mudar algo em um arquivo e ver onde ele é importado para mudar também.
+Quando se utiliza a Injeção de Dependência, a instância do objeto de um outro arquivo não é criada dentro da classe, mas passada 
+como argumento para o construtor. Assim, a classe utiliza somente o que é necessário para ela, sem ter uma forte dependência 
+da construção da instância de outra classe dentro de si mesma.
+
+4 - D
+
+5 - A
+
+6 - D
+
+Descreva brevemente o fluxo de uma requisição DELETE /api/contatos/:id através das
+camadas da arquitetura da Etapa 3 (Routes -> Controller -> Service -> Repository). Explique o papel de
+cada camada nesse processo.
+
+7 - Primeiro, a requisição vem da camada do frontend quando o usuário realiza uma ação; nesse caso, o delete. A requisição chega 
+na camada Route, com o HTTP delete, que a recebe com o identificador (id) do objeto que será deletado e a direciona para a camada 
+Controller. A camada Controller, com o HTTP  e o identificador, passa o id como argumento da função ProcurarID, por exemplo, da 
+camada Service. Caso o objeto com o id de fato exista, a camada enviará os dados para a camada Repository, onde ocorrerá, de 
+fato, sua exclusão. Depois, será retornado ao Controller a mensagem de  sucesso, que será convertida em JSON e um status que 
+será enviado ao usuário.
+
+A camada Route é a primeira a ser utilizada; ela recebe a requisição do frontend com o body e repassa as informações roteadas 
+para o Controller.
+
+O Controller repassa as informações para a camada Service. Essa camada é a intermediária entre a View e a Model, é ela quem 
+decide para onde os dados são enviados, mas ela não sabe como realizar nenhuma das ações. 
+
+A camada Service é onde ficam as regras da aplicação, as validações. Ali, no caso, é necessário que o objeto exista para que ele 
+possa ser deletado. Assim, que tem o papel de verificar isso é essa camada.
+
+O Repository é a camada que faz o contato direto com o Banco de Dados, onde a exclusão será realizada por meio da query. Essa
+camada tem a responsabilidade do CRUD da aplicação.
+
+8 - D 
+
+9 - C 
+
+10 - C
+
+
+*O desafio prático está na ETAPA 3

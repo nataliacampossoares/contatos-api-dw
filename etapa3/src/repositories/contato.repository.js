@@ -8,7 +8,8 @@ export class ContatoRepository {
   }
 
   findById(id) {
-    return this.#contatos.find(c => c.id === id);
+    const teu = this.#contatos.find(c => c.id === id);
+    console.log(teu)
   }
 
   create(contatoData) {
@@ -32,5 +33,16 @@ export class ContatoRepository {
     
     this.#contatos.splice(index, 1);
     return true;
+  }
+
+  findByEmail(email) {
+    console.log(this.#contatos)
+    this.#contatos.forEach( c => {
+      if(c.email === email){
+        return true
+      } else {
+        return false
+      }
+    })
   }
 }

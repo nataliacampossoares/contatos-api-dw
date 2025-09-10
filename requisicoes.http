@@ -2,19 +2,15 @@
 @url=http://localhost:3000
 
 
-### Contatos
-GET {{url}}/api/contatos
-
-### 
-GET {{url}}/api/contatos/3
-
+### Busca por Email
+GET {{url}}/api/contatos/bernardo@gmail.com
 
 ### Requisição POST
 POST {{url}}/api/contatos
 Content-Type: application/json
 
 {
-    "nome":"natin2",
+    "nome":"nati",
     "email": "bernardo@gmail.com",
     "telefone": "44123451234"
 }
@@ -31,3 +27,6 @@ Content-Type: application/json
 
 ### Requisição DELETE
 DELETE {{url}}/api/contatos/1
+
+## 
+//GET {{url}}/api/contatos/bernardo@gmail.com
